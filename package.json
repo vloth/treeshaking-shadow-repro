@@ -5,7 +5,7 @@
     "dev": "shadow-cljs watch app",
     "release": "shadow-cljs release app && npm run bundle:release && live-server public",
     "bundle:watch": "esbuild --bundle public/js/lib.js --outfile=public/js/lib.bundle.js --watch",
-    "bundle:release": "esbuild --bundle public/js/lib.js --outfile=public/js/lib.bundle.js --define:NODE_ENV=production --minify"
+    "bundle:release": "esbuild --bundle public/js/lib.js --outfile=public/js/lib.bundle.js"
   },
   "author": "",
   "license": "UNLICENSED",

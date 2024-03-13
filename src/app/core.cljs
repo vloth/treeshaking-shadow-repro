@@ -2,19 +2,19 @@
   (:require [reagent.dom.client :as r]
             ["@mantine/core" :refer [MantineProvider AppShell]]))
 
+(defn app-shell
+  [container]
+  [:> AppShell {:header #js {:height 60} :padding "md"}
+   [:> AppShell.Header [:div "[logo here]"]]
+   [:> AppShell.Main container]])
+
 (comment
   "This breaks!"
   (defn app-shell
     [container]
     [:> AppShell {:header #js {:height 60} :padding "md"}
-     [:> AppShell.Header [:div "[logo here]"]]
-     [:> AppShell.Main container]]))
-
-(defn app-shell
-  [container]
-  [:> AppShell {:header #js {:height 60} :padding "md"}
-   [:> (.-Header AppShell) [:div "[logo here]"]]
-   [:> (.-Main AppShell) container]])
+     [:> (.-Header AppShell) [:div "[logo here]"]]
+     [:> (.-Main AppShell) container]]))
 
 (defonce root
   (r/create-root
