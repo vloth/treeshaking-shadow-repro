@@ -1,0 +1,26 @@
+{
+  "name": "treeshaking-shadow-repro",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "shadow-cljs watch app",
+    "release": "shadow-cljs release app && npm run bundle:release && live-server public",
+    "bundle:watch": "esbuild --bundle public/js/lib.js --outfile=public/js/lib.bundle.js --watch",
+    "bundle:release": "esbuild --bundle public/js/lib.js --outfile=public/js/lib.bundle.js --define:NODE_ENV=production --minify"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "esbuild": "^0.20.1",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.35",
+    "postcss-preset-mantine": "^1.13.0",
+    "postcss-simple-vars": "^7.0.1",
+    "shadow-cljs": "^2.27.5"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.6.2",
+    "@mantine/hooks": "^7.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

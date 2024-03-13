@@ -1,0 +1,17 @@
+{:source-paths 
+ ["src"]
+
+ :dependencies 
+ [[reagent "1.2.0"]]
+
+ :builds 
+ {:app {:target :browser
+        :compiler-options {:install-deps true}
+        :devtools {:http-port 3000, :http-root "public"}
+        :modules {:main {:init-fn app.core/init}}
+        :output-dir "public/js"
+        :js-options
+          {:external-index "public/js/lib.js"
+           :external-index-format :esm
+           :js-provider :external}}}}
+
